@@ -1,0 +1,18 @@
+﻿@model Movie
+
+<form asp-action="MovieSearchResults" asp-controller="Home" method="post">
+    <p>Title</p>
+    <input type="text" name="title"/>
+    <p></p>
+    <input type="submit" value="Search" />
+</form>
+
+@if(Model != null)
+{
+    <p>@Model.Title</p>
+    <p>Genres: @Model.Genre</p>
+    <p>Runtime: @Model.Runtime</p>
+    <p>Description: @Model.Plot</p>
+    <p>Rated: @Model.Rated</p>
+    <img src="@Model.Poster">
+}
